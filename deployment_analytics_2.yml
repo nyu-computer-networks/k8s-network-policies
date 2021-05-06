@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics-2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: analytics2
+  template:
+    metadata:
+      labels:
+        app: analytics2
+    spec:
+      containers:
+      - name: analytics2
+        image: bulutmf/test:latest
+        ports:
+        - containerPort: 8080

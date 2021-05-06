@@ -1,0 +1,12 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-only-specific-port
+spec:
+  podSelector:
+    matchLabels:
+      app: frontend
+  ingress:
+  - from: []
+    ports:
+    - port: 8080
